@@ -191,7 +191,7 @@ with st.sidebar:
  
 
 # Main content
-st.title("🤖 AI Image Captioning")
+st.title("🤖 Image Caption Generator")
 st.markdown("Transform your images into descriptive captions using AI")
 
 # Create tabs
@@ -264,4 +264,4 @@ with tab2:
 with tab3:
     # About section
     st.title("ℹ️ About")
-    st.write("This is an AI Image Captioning application built using Streamlit.")
+    st.write("This is an Image Captioning application in PyTorch built using Streamlit.")
