@@ -6,6 +6,5 @@ pycocotools
 numpy
 collection
 Pillow
-pickle
 streamlit
 
