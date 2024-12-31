@@ -3,7 +3,7 @@ torchvision==0.17
 matplotlib
 nltk
 pycocotools
-numpy==1.24.1
+numpy>=1.21,<1.26
 collection
 Pillow
 streamlit
