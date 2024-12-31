@@ -5,7 +5,7 @@ nltk
 pycocotools
 numpy
 collection
-PIL 
+Pillow
 pickle
 streamlit
 
