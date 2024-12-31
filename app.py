@@ -77,7 +77,7 @@ class Vocab(object):
             self.index += 1
 
 # Load vocabulary
-with open('/Users/abdulmateen/Downloads/vocabulary.pkl', 'rb') as f:
+with open('models/vocabulary.pkl', 'rb') as f:
     vocabulary = pickle.load(f)
 
 # Image preprocessing
@@ -140,8 +140,8 @@ def load_models():
     encoder_model = encoder_model.to(device)
     decoder_model = decoder_model.to(device)
     
-    encoder_model.load_state_dict(torch.load('/Users/abdulmateen/Downloads/encoder-5-3200.ckpt', map_location=device))
-    decoder_model.load_state_dict(torch.load('/Users/abdulmateen/Downloads/decoder-5-3200.ckpt', map_location=device))
+    encoder_model.load_state_dict(torch.load('models/encoder-5-3200.ckpt', map_location=device))
+    decoder_model.load_state_dict(torch.load('models/decoder-5-3200.ckpt', map_location=device))
     return encoder_model, decoder_model
 
 encoder_model, decoder_model = load_models()
