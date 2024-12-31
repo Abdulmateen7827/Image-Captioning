@@ -188,16 +188,7 @@ if 'history' not in st.session_state:
 with st.sidebar:
     st.title("⚙️ Model Settings")
     st.write(f"Running on: {device}")
-    
-    # Theme selector
-    theme = st.select_slider(
-        "Choose Theme",
-        options=["Light", "Dark", "Custom"],
-        value="Light"
-    )
-    
-    if theme == "Custom":
-        primary_color = st.color_picker("Choose primary color", "#ff4b4b")
+ 
 
 # Main content
 st.title("🤖 AI Image Captioning")
