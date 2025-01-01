@@ -34,6 +34,20 @@ The LSTM layer takes as input Image embeddings + Word embeddings and outputs Wor
 Caption Generation:
 Uses greedy search to predict captions during inference.
 
+### **Evaluation Metrics**
+#### **BLEU Scores**
+The model's performance was evaluated using the BLEU (Bilingual Evaluation Understudy) score, a metric for comparing a generated sentence to a reference sentence. The BLEU scores obtained from training the model were as follows:
+- **BLEU-1**: 39.13
+- **BLEU-2**: 21.45
+- **BLEU-3**: 13.00
+- **BLEU-4**: 8.01
+
+
+#### **Training vs Validation Loss**
+Below is the graph showing the training and validation loss over epochs, which helps in understanding the model's learning progress and generalization capability.
+
+![Training vs Validation Loss](utils/loss_graph.png)
+
 
 👉 **Try it out here**: [Streamlit App](https://image-captioning-aka5tny4hjsehrjzv6vhms.streamlit.app)
 
