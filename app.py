@@ -8,6 +8,7 @@ import torchvision.transforms as transforms
 import streamlit as st
 from datetime import datetime
 import time
+from utils.preprocessor import load_image
 
 # Set page configuration
 st.set_page_config(
@@ -16,7 +17,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
+# Display notice about model limitations
+st.warning("⚠️ Notice: The model used in this application has low accuracy due to computational limitations.")
 # Custom CSS
 st.markdown("""
     <style>
@@ -66,7 +68,7 @@ class Vocab(object):
             self.index += 1
 
 # Load vocabulary
-with open('models/vocabulary.pkl', 'rb') as f:
+with open('utils/vocabulary.pkl', 'rb') as f:
     vocabulary = pickle.load(f)
 
 # Image preprocessing
@@ -135,15 +137,15 @@ def load_models():
 
 encoder_model, decoder_model = load_models()
 
-def load_image(image_file, transform=None):
-    if isinstance(image_file, str):
-        img = Image.open(image_file).convert('RGB')
-    else:
-        img = Image.open(image_file).convert('RGB')
-    img = img.resize([224, 224], Image.LANCZOS)
-    if transform is not None:
-        img = transform(img).unsqueeze(0)
-    return img
+# def load_image(image_file, transform=None):
+#     if isinstance(image_file, str):
+#         img = Image.open(image_file).convert('RGB')
+#     else:
+#         img = Image.open(image_file).convert('RGB')
+#     img = img.resize([224, 224], Image.LANCZOS)
+#     if transform is not None:
+#         img = transform(img).unsqueeze(0)
+#     return img
 
 def generate_caption(image_file):
     img = load_image(image_file, transform)
@@ -208,7 +210,7 @@ with tab1:
         col1, col2 = st.columns(2)
         
         with col1:
-            st.image(Image.open(image), caption="Input Image", use_container_width=True)
+            st.image(Image.open(image), caption="Input Image", use_column_width=True)
         
         with col2:
             if st.button("Generate Caption"):

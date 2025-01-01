@@ -34,11 +34,26 @@ The LSTM layer takes as input Image embeddings + Word embeddings and outputs Wor
 Caption Generation:
 Uses greedy search to predict captions during inference.
 
+## Project structure
+image-captioning/
+│
+├── app.py                 # Streamlit application
+├── models/
+│   ├── encoder.ckpt       # CNN encoder model
+│   └── decoder.ckpt       # LSTM decoder model
+├── utils/
+│   ├── preprocessing.py  # Image preprocessing
+│   └── vocabulary.py     # Vocabulary handling
+├── trained_models/       # Saved model checkpoints
+├── requirements.txt      # Project dependencies
+└── README.md            # Project documentation
+
+👉 Try it out here: image-captioning-aka5tny4hjsehrjzv6vhms.streamlit.app
 
 ## ⚙️ Installation  
 1. Clone the repository:  
    ```bash
-   git clone hhttps://github.com/Abdulmateen7827/Image-Captioning.git 
+   git clone https://github.com/Abdulmateen7827/Image-Captioning.git 
    cd Image-captioning  
 
 2. Install dependencies
@@ -48,4 +63,11 @@ pip install -r requirements.txt
 3. Run the application
 ```python
 streamlit run streamlit_app.py
-
+```
+## Future Enhancements  
+- **Leverage Deeper Architectures** 
+- **Incorporate Attention Mechanisms**
+- **Expand to Video Captioning**
+- **Diversify Captions** 
+- **Enable Multi-Language Support**
+- **Adopt Beam Search for more accurate captions**
