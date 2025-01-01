@@ -3,22 +3,11 @@ import torch.nn as nn
 import torchvision.models as models
 from torch.nn.utils.rnn import pack_padded_sequence
 from PIL import Image
-import os
 import pickle
-import nltk
-from pycocotools.coco import COCO
-from collections import Counter
-import torch.utils.data as data
 import torchvision.transforms as transforms
-import numpy as np
-import matplotlib.pyplot as plt
 import streamlit as st
-import pandas as pd
 from datetime import datetime
 import time
-import io
-import requests
-from io import BytesIO
 
 # Set page configuration
 st.set_page_config(

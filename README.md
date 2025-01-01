@@ -10,13 +10,42 @@ This project explores the exciting field of **image captioning**, where computer
 - **Media Management**: Improving image search and categorization.  
 - **Healthcare**: Assisting in medical imaging annotation.  
 
-## 🛠️ Project Highlights  
+##  Project Highlights  
 - **Model Architecture**: Utilized **ResNet34** as a feature extractor for its efficiency and performance balance.  
-- **Dataset**: Trained on the **COCO dataset**, containing 400,000 images paired with five captions each.  
+- **Dataset**: Trained on the **COCO dataset**, containing more than 200,000 lebeled images paired with five captions each.  
 - **Framework**: Developed using **PyTorch**, chosen for its intuitive object-oriented programming style and flexibility.  
+
+## 🛠️ Model Architecture
+
+### **1. CNN Encoder: ResNet-34**
+The encoder of the image captioning model is based on a pretrained **ResNet-34** architecture, a deep convolutional neural network known for its high representational power. Here’s how the encoder works:
+
+- **Feature Extraction**:
+  - The top fully connected (fc) layer of ResNet-34 is removed, leaving the convolutional layers intact.
+  - The resulting architecture outputs feature vectors that represent the high-level features of the input images.
+- **Custom Layers**:
+  - A fully connected (fc) layer maps the extracted features to a lower-dimensional space of size `embedding_size`.
+  - Batch normalization is applied to stabilize and speed up training.
+
+
+### **2. LSTM Decoder**
+The LSTM layer takes as input Image embeddings + Word embeddings and outputs Word probability distributions (captions)
+
+Caption Generation:
+Uses greedy search to predict captions during inference.
+
 
 ## ⚙️ Installation  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/image-captioning.git  
-   cd image-captioning  
+   git clone hhttps://github.com/Abdulmateen7827/Image-Captioning.git 
+   cd Image-captioning  
+
+2. Install dependencies
+```python 
+pip install -r requirements.txt
+```
+3. Run the application
+```python
+streamlit run streamlit_app.py
+
