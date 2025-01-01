@@ -34,20 +34,6 @@ The LSTM layer takes as input Image embeddings + Word embeddings and outputs Wor
 Caption Generation:
 Uses greedy search to predict captions during inference.
 
-## 📂 Project Structure  
-image-captioning/  
-├── app.py                 # Streamlit application  
-├── models/  
-│   ├── encoder.ckpt       # CNN encoder model  
-│   └── decoder.ckpt       # LSTM decoder model  
-├── utils/  
-│   ├── preprocessing.py   # Image preprocessing  
-│   └── vocabulary.py      # Vocabulary handling  
-├── trained_models/        # Saved model checkpoints  
-├── requirements.txt       # Project dependencies  
-└── README.md              # Project documentation  
-
----
 
 👉 **Try it out here**: [Streamlit App](https://image-captioning-aka5tny4hjsehrjzv6vhms.streamlit.app)
 
