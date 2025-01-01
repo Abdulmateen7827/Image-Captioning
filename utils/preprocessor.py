@@ -10,4 +10,3 @@ def load_image(image_file, transform=None):
     if transform is not None:
         img = transform(img).unsqueeze(0)
     return img
-   
